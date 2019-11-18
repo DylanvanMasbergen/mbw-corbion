@@ -18,7 +18,7 @@ class ScannedRoundsTable extends Migration
             $table->date('day');
             $table->integer('shift');
             $table->unsignedBigInteger('shifttime_id');
-            $table->foreign('shifttime_id')->references('id')->on('shifttimes');
+            $table->foreign('shifttime_id')->references('id')->on('shift_times');
         });
     }
     /**

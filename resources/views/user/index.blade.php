@@ -18,7 +18,8 @@
             <table class="table table-bordered mb-0">
                 <thead>
                     <tr>
-                        <th scope="col">User</th>
+                        <th scope="col">Username</th>
+                        <th scope="col">Account Name</th>
                         <th scope="col">Role</th>
                         <th scope="col">Option</th>
                     </tr>
@@ -27,10 +28,13 @@
                     @foreach($users as $user)
                             <tr>
                                 <td>
+                                    {{ $user->username }}
+                                </td>
+                                <td>
                                     {{ $user->name }}
                                 </td>
                                 <td>
-                                    {{ $user->name }} 
+                                    {{ $user->role_id }}
                                 </td>
                                 <td>
                                     <form style="display:inline-block" action="{{action('UserController@destroy', ['id' => $user->id])}}" method="post"> 

@@ -13,7 +13,7 @@ class ShiftTimesTable extends Migration
      */
     public function up()
     {
-        Schema::create('shifttimes', function (Blueprint $table) {
+        Schema::create('shift_times', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->integer('shift');
             $table->time('startTime');

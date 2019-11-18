@@ -17,6 +17,9 @@ class CreateEmployeesTable extends Migration
             $table->bigIncrements('id');
             $table->string('name', 100);
             $table->string('employeecode', 50);
+
+            $table->unsignedBigInteger('role_id');
+            $table->foreign('role_id')->references('id')->on('roles');
         });
     }
 

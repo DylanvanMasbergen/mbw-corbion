@@ -39,7 +39,7 @@
                         <form style="display:inline-block" action="{{action('EmployeeController@destroy', ['id' => $Employee->id])}}" method="post">
                             @csrf
                             @method('DELETE')
-                            <button type="submit" value="Submit" class="btn btn-danger btn-sm">Delete</button>
+                            <button onclick="return confirm('Are you sure you want to Delete an Employee?')" type="submit" value="Submit" class="btn btn-danger btn-sm">Delete</button>
                         </form>
                     </td>
                 </tr>

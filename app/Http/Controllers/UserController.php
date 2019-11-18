@@ -26,7 +26,6 @@ class UserController extends Controller
     {   
         $roles = Role::all();
         return view('user.index', ['users' => User::All()]);
-        
     }
 
     /**

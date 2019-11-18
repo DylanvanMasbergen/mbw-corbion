@@ -21,7 +21,7 @@ class OverruledController extends Controller
      */
     public function index()
     {
-        return view('overruled.index', ['ScanDepartments' => ScanDepartment::all(), 'Scanpoints' => Scanpoint::all(), 'Employees' => Employee::all()]);
+        return view('overruled.index', ['ScanDepartments' => ScanDepartment::all(), 'Employees' => Employee::all()]);
     }
 
     /**
@@ -43,9 +43,8 @@ class OverruledController extends Controller
     public function store(Request $request)
     {
         $overruled = new ScannedPoint();
-        $overruled->Employee = request('Employee');
-        $overruled->ScanDepartment = Hash::make(request('scandepartment'));
-        $overruled->Scanpoint = request('scanpoint');
+        $overruled->Employee = request('employee');
+        $overruled->ScanDepartment = request('scandepartment');
         $overruled->save();
 
         return redirect('/overruled')->with('success', 'Scans has been overruled!');

@@ -47,23 +47,10 @@
                                 </div>
                             </div>
 
-                            <div class="form-group row">
-                                <label for="role_id" class="col-md-4 col-form-label text-md-right">{{ __('Choose a Scanpoint') }}</label>
-                                <div class="col-md-6">
-                                    <select class="form-control" id="role_id" name="role_id">
-                                        @foreach ($Scanpoints as $Scanpoint)
-                                            <option value="" disabled selected hidden>Please Choose a Scanpoint...</option>
-                                            <option  id="{{$Scanpoint->barcode}}" value="{{$Scanpoint->barcode}}">{{$Scanpoint->barcode}}</option>
-                                            @endforeach
-                                    </select>
-                                </div>
-                            </div>
-
-
                             <div class="form-group row mb-0">
                                 <div class="col-md-6 offset-md-4">
                                     <button type="submit" class="btn btn-success">
-                                        {{ __('Create') }}
+                                        {{ __('Next') }}
                                     </button>
                                 </div>
                             </div>
