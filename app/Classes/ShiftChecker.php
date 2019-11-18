@@ -29,7 +29,7 @@ class ShiftChecker
         $this->end3 = $this->shifts[5]->endTime;
     }
 
-    // Check scanned time with shifttimes and return current shift
+    // Check scanned time with shifttimes and return current shift ID
     public function getCurrentShift($scantime)
     {
         if($scantime > $this->start1 && $scantime < $this->end1){
@@ -40,7 +40,7 @@ class ShiftChecker
             return $this->shifts[4]->shift;
         }
     }
-    // Check current time with shifttimes and return current shift
+    // Check current time with shifttimes and return shift ID
     public function getShift()
     {
         if($this->currentTime > $this->start1 && $this->currentTime < $this->end1){
