@@ -17,6 +17,7 @@ class ScanRound extends Revisionable
         'updated_at',
     ];
     
+    
     public function ScannedPoint()
     {
         return $this->belongsTo('App\ScannedPoint');

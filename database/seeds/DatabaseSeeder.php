@@ -17,12 +17,8 @@ class DatabaseSeeder extends Seeder
         $this->call(UsersTableSeeder::class);
         $this->call(ShiftTimesTableSeeder::class);
         $this->call(EmployeeTableSeeder::class);
-
         $this->call(ScannedRoundsTableSeeder::class);
         $this->call(ScannedpointsTableSeeder::class);
-
-
-
 
     }
 }

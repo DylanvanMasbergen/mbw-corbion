@@ -17,6 +17,7 @@ class ScannedRoundsTableSeeder extends Seeder
             'day' => Carbon::parse('11-09-2019'),
             'shift' => 3,
             'shifttime_id' => '1',
+            
         ]);
     }
 }
