@@ -8,9 +8,6 @@ use App\Classes\RoundChecker;
 use App\Classes\ShiftChecker;
 use App\ScannedPoint;
 
-
-
-
 class ScanRoundController extends Controller
 {
     /**
@@ -20,9 +17,16 @@ class ScanRoundController extends Controller
      */
     public function index()
     {
-        dd(Scannedpoint::all());
-      //  $foobar = new shiftChecker;  // correct
-      //  $foobar->getShift();
+        $round = new RoundChecker();
+
+        //$currentRound = $round->exportToCsv();
+
+        return view('scanround.index');
+
+        $currentRound = $round->createRound();
+        $currentRound = $round->getRound();
+        dd($currentRound);
+
     }
 
     /**     
@@ -31,12 +35,10 @@ class ScanRoundController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function create(Request $request)
-    {   
-
+    {
         $data = RoundChecker::splicer($request);
-        log::info($data);
         $roundChecker = new RoundChecker;
-        $roundChecker->putDatabase($data);
+        $roundCheckercreateRound($data);
     }
     /**
      * Store a newly created resource in storage.
@@ -45,7 +47,10 @@ class ScanRoundController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $roundChecker = new RoundChecker;
+        $dates = $roundChecker->exportToCsv($request);
+
+        return view('scanround.index');
     }
 
     /**

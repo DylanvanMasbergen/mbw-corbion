@@ -25,8 +25,12 @@ Route::group(['middleware' => ['auth']], function() {
 Route::get('/', function () {
     return redirect('/home');
 });*/
+//Route::get('/scanround/getcsv', 'ScanRoundController@index');
 
 Route::get('/logout', '\App\Http\Controllers\Auth\LoginController@logout');
-
+/*
 Route::post('/scanround' ,'ScanRoundController@create');
-Route::get('/scanround/test' ,'ScanRoundController@index');
+Route::get('/scanround/test' ,'ScanRoundController@index')->name('scanround');
+//Route::post('/scanround/scanround', 'ScanRoundController@store')->name('scanround.store');*/
+
+Route::resource('scanround', 'ScanRoundController');

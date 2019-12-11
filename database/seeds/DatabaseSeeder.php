@@ -16,7 +16,7 @@ class DatabaseSeeder extends Seeder
         $this->call(EmployeeTableSeeder::class);
         $this->call(ShiftTimesTableSeeder::class);
         $this->call(ScannedRoundsTableSeeder::class);
-        //$this->call(ScannedpointsTableSeeder::class);
+        $this->call(ScannedpointsTableSeeder::class);
         $this->call(RolesTableSeeder::class);
         $this->call(UsersTableSeeder::class);
 

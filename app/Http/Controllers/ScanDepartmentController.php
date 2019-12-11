@@ -8,7 +8,7 @@ class ScanDepartmentController extends Controller
 {
     public function __construct()
     {
-        $this->middleware('admin')->except('index', 'show');
+        $this->middleware('admin:Spillteam')->except('index', 'show');
     }
     /**
      * Display a listing of the resource.

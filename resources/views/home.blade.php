@@ -19,14 +19,14 @@
                     </thead>
                     <tbody>
                       @foreach ($Scanpoints as $Scanpoint)
-                        <tr>
-                          @if($Scanpoint->department_id === $ScanDepartment->id)
-                            <th>{{$Scanpoint->barcode}}</th>
-                            <td>{{$Scanpoint->location}}</td>
-                            <td></td>
-                            <td></td>
-                          @endif
-                        </tr>
+                        @if($Scanpoint->department_id === $ScanDepartment->id)
+                          <tr>
+                              <th>{{$Scanpoint->barcode}}</th>
+                              <td>{{$Scanpoint->location}}</td>
+                              <td></td>
+                              <td></td>
+                          </tr>
+                        @endif
                       @endforeach
                     </tbody>
                   </table>

@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 use App\ScanDepartment;
 use App\Scanpoint;
-use App\scanRound;
+use App\ScanRound;
 use App\ScannedPoint;
 use Illuminate\Http\Request;
 
