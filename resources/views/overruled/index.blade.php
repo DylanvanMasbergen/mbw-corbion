@@ -14,7 +14,8 @@
                              <div class="form-group row">
                                 <label for="role_id" class="col-md-4 col-form-label text-md-right">{{ __('Choose a Shiftmanager or Assistant') }}</label>
                                 <div class="col-md-6">
-                                    <select class="form-control" id="role_id" name="role_id">
+                                    
+                                    <select class="form-control" id="employee_id" name="employee_id">
                                         @foreach ($Employees as $Employee)
                                             <option value="" disabled selected hidden>Please Choose a Shiftmanager...</option>
                                             <option  id="{{$Employee->name}}" value="{{$Employee->name}}"> {{$Employee->name}}</option>
@@ -23,17 +24,6 @@
                                 </div>
                             </div>
 
-                             <div class="form-group row">
-                                <label for="role_id" class="col-md-4 col-form-label text-md-right">{{ __('Choose an Operator') }}</label>
-                                <div class="col-md-6">
-                                    <select class="form-control" id="role_id" name="role_id">
-                                        @foreach ($Employees as $Employee)
-                                            <option value="" disabled selected hidden>Please Choose an Operator...</option>
-                                            <option  id="{{$Employee->name}}" value="{{$Employee->name}}"> {{$Employee->name}}</option>
-                                            @endforeach
-                                    </select>
-                                </div>
-                            </div>
 
                             <div class="form-group row">
                                 <label for="role_id" class="col-md-4 col-form-label text-md-right">{{ __('Choose a Scandepartment') }}</label>
@@ -50,7 +40,7 @@
                             <div class="form-group row mb-0">
                                 <div class="col-md-6 offset-md-4">
                                     <button type="submit" class="btn btn-success">
-                                        {{ __('Next') }}
+                                        {{ __('Submit') }}
                                     </button>
                                 </div>
                             </div>

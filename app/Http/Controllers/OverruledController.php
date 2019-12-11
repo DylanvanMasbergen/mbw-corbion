@@ -42,12 +42,8 @@ class OverruledController extends Controller
      */
     public function store(Request $request)
     {
-        $overruled = new ScannedPoint();
-        $overruled->Employee = request('employee');
-        $overruled->ScanDepartment = request('scandepartment');
-        $overruled->save();
 
-        return redirect('/overruled')->with('success', 'Scans has been overruled!');
+
     }
 
     /**
@@ -56,9 +52,15 @@ class OverruledController extends Controller
      * @param  \App\Overruled  $overruled
      * @return \Illuminate\Http\Response
      */
-    public function show(Overruled $overruled)
+    public function show(Overruled $overruled, $id)
     {
-        //
+        $request->session()->put('key', 'value');
+        
+        $value = $request->session()->get('key', 'default');
+
+        $value = $request->session()->get('key', function () {
+        return 'default';
+});
     }
 
     /**

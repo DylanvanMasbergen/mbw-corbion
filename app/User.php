@@ -4,6 +4,8 @@ use Illuminate\Notifications\Notifiable;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Database\Eloquent\Model;
+use Venturecraft\Revisionable\Revisionable;
+
 class User extends Authenticatable
 {
     public function role()

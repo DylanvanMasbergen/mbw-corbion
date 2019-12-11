@@ -16,6 +16,13 @@ class CreateOverruledsTable extends Migration
         Schema::create('overruleds', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->timestamps();
+
+            $table->unsignedBigInteger('employee_id');
+            $table->foreign('employee_id')->references('id')->on('employees');
+            $table->unsignedBigInteger('scanround_id');
+            $table->foreign('scanround_id')->references('id')->on('scan_rounds');
+
+            $table->text('reason');
         });
     }
 
