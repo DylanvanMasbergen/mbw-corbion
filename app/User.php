@@ -1,24 +1,24 @@
 <?php
-
 namespace App;
-
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
-
+use Illuminate\Database\Eloquent\Model;
 class User extends Authenticatable
 {
+    public function role()
+    {
+        return $this->belongsTo('App\Role');
+    }
     use Notifiable;
-
     /**
      * The attributes that are mass assignable.
      *
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password',
+        'name', 'username', 'password', 'role_id',
     ];
-
     /**
      * The attributes that should be hidden for arrays.
      *
@@ -27,7 +27,6 @@ class User extends Authenticatable
     protected $hidden = [
         'password', 'remember_token',
     ];
-
     /**
      * The attributes that should be cast to native types.
      *
