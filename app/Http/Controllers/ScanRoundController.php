@@ -1,16 +1,14 @@
 <?php
-
 namespace App\Http\Controllers;
-
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Log;
 use App\Classes\RoundChecker;
 use App\Classes\ShiftChecker;
 use App\ScannedPoint;
-use App\Employee;
+use App\ScanPoint;
 
-
-
+use App\ScanRound;
+use App\Overruled;
 
 class ScanRoundController extends Controller
 {
@@ -20,25 +18,20 @@ class ScanRoundController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function index()
-    {   
-        $model = Employee::findOrFail(1);
-        $model = Employee::where('employeecode', 'E0069')->firstOrFail();
-        dd($model->id);
-      //  $foobar = new shiftChecker;  // correct
-      //  $foobar->getShift();
+    {
+        $rounds = ScanRound::all();
+        return view('scanround.index', ['scanrounds'=>$rounds]);
     }
-
     /**     
      * Show the form for creating a new resource.
      *
      * @return \Illuminate\Http\Response
      */
     public function create(Request $request)
-    {   
-       
+    {
         $data = RoundChecker::splicer($request);
-        $Scanround = new RoundChecker;
-        $Scanround->ScanroundBuilder($data);
+        $roundChecker = new RoundChecker;
+        $roundCheckercreateRound($data);
     }
     /**
      * Store a newly created resource in storage.
@@ -47,9 +40,10 @@ class ScanRoundController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $roundChecker = new RoundChecker;
+        $dates = $roundChecker->exportToCsv($request);
+        return view('scanround.index');
     }
-
     /**
      * Display the specified resource.
      *
@@ -58,9 +52,8 @@ class ScanRoundController extends Controller
      */
     public function show($id)
     {
-        //
+        //  
     }
-
     /**
      * Show the form for editing the specified resource.
      *
@@ -69,9 +62,9 @@ class ScanRoundController extends Controller
      */
     public function edit($id)
     {
-        //
+        $ScanRound = ScanRound::find($id);
+        return view('ScanRound.edit', ['ScanRound' => $ScanRound]);
     }
-
     /**
      * Update the specified resource in storage.
      *
@@ -83,7 +76,6 @@ class ScanRoundController extends Controller
     {
         //
     }
-
     /**
      * Remove the specified resource from storage.
      *

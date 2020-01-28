@@ -35,5 +35,31 @@ class ScannedpointsTableSeeder extends Seeder
             'scanround_id' => '3',
             'scanpoint_id' => '3',
         ]);
+
+         DB::table('scanned_points')->insert([
+            'id'        => '4',
+            'scanned_at' => '2019-03-03 09:14:39',
+            'scanned_time' => '07:14:39',
+            'operator_id' => '3',
+            'scanround_id' => '3',
+            'scanpoint_id' => '28',
+        ]);
+
+        DB::table('scanned_points')->insert([
+            'id'        => '5',
+            'scanned_at' => '2019-03-03 09:14:39',
+            'scanned_time' => '07:14:39',
+            'operator_id' => '2',
+            'scanround_id' => '3',
+            'scanpoint_id' => '54',
+        ]);
+        DB::table('scanned_points')->insert([
+            'id'        => '6',
+            'scanned_at' => '2019-03-03 09:14:39',
+            'scanned_time' => '07:14:39',
+            'operator_id' => '26',
+            'scanround_id' => '3',
+            'scanpoint_id' => '55',
+        ]);
     }
 }

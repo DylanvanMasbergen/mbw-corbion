@@ -18,7 +18,12 @@ Route::group(['middleware' => ['auth']], function() {
     Route::resource('employees', 'EmployeeController');
     Route::resource('user', 'UserController');
     Route::resource('overview', 'OverviewController');
+    
     Route::resource('overruled', 'OverruledController');
+    Route::get('overruled/{scanround_id}/{overruled_id}/add/{scanpoint_id}', 'OverruledController@add');
+    Route::get('overruled/create/{scanround_id}', 'OverruledController@create');
+    Route::resource('scanround', 'ScanRoundController');
+    
 });
 
 Route::get('/', function () {
